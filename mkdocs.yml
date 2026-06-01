@@ -1,3 +1,40 @@
 site_name: Upkapp Docs
+site_url: https://docs.upkapp.com
+
 theme:
   name: material
+  logo: assets/upkapp_white.png
+  favicon: assets/app_fav.png # Você pode usar a mesma imagem ou um ícone menor
+  palette:
+    # Paleta do modo claro (Light mode)
+    - scheme: default
+      primary: custom # Cor principal da barra superior
+      accent: custom    # Cor dos links e botões de destaque
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+extra:
+  generator: false
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Welcome: index.md
+  - Quick Start: quick-start.md
+  - Core Concepts: core-concepts.md
+  - 📂 Organizing Your Data:
+      - Groups: groups.md
+      - Items: items.md
+      - Jobs: jobs.md
+  - 🚀 Advanced Features:
+      - Dynamic Scheduling: dynamic-scheduling.md
+      - Meter & Data Tracking: meters.md
+      - Smart Status: smart-status.md
+  - 💼 Daily Operations:
+      - Work Orders: work-orders.md
+      - User Assignments: assignments.md
+  - 👑 Administration:
+      - User Management: users.md
+      - Billing & Subscription: billing.md
+  - 💡 Examples:
+      - Industry Use Cases: use-cases.md

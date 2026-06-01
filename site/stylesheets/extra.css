@@ -1,0 +1,29 @@
+:root>* {
+    /* 1. CORES PRINCIPAIS (Header, botões principais) */
+    --md-primary-fg-color: #322249;
+    /* Sua cor base */
+    --md-primary-fg-color--light: #4c376b;
+    /* Usada em gradientes ou hover */
+    --md-primary-fg-color--dark: #1e142b;
+    /* Usada em sombras e fundos */
+    --md-primary-bg-color: #ffffff;
+    /* Cor do ícone/texto que fica em cima da barra superior */
+
+    /* 2. COR DE DESTAQUE (Botão flutuante, seleções, etc) */
+    --md-accent-fg-color: #D064CD;
+    /* Mude o valor de "accent" no mkdocs.yml para "custom" tbm! */
+
+    /* 3. CORES BASE DO SITE (Fundo e Textos) */
+    --md-default-bg-color: #ffffff;
+    /* Cor de fundo da página */
+    --md-default-fg-color: #202020;
+    /* Cor do texto principal (parágrafos) */
+    --md-default-fg-color--light: #707070;
+    /* Cor do texto secundário (rodapé, datas) */
+
+    /* 4. LINKS E CÓDIGO */
+    --md-typeset-a-color: #322249;
+    /* Cor dos links clicáveis no meio do texto */
+    --md-code-bg-color: #f5f5f5;
+    /* Cor de fundo das caixas de código */
+}
