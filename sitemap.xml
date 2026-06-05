@@ -2,70 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.upkapp.com/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/assignments/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/billing/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/core-concepts/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/dynamic-scheduling/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/groups/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/items/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/jobs/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/meters/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.upkapp.com/notifications/</loc>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/quick-start/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/restart-job/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/roadmap-release-notes/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/smart-status/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/templates/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/use-cases/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/users/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://docs.upkapp.com/work-orders/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
 </urlset>
