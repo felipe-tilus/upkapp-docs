@@ -191,7 +191,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1147,7 +1149,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1169,41 +1173,61 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
 
   <h1>APIs and Webhooks</h1>
 
-<hr />
-<p>hide:
-  - navigation
-  - toc</p>
-<hr />
 <style>
-  /* Força o conteúdo do MkDocs a usar a largura total da tela */
-  .md-grid {
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  /* Remove margens extras da área de conteúdo */
-  .md-content {
-    max-width: 100% !important;
-  }
+  /* Força tela cheia para evitar leitura espremida nas colunas do MkDocs */
+  .md-grid { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+  .md-content { max-width: 100% !important; }
 </style>
 
 <div id="redoc-container"></div>
 <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+
 <script>
-  Redoc.init(
-    'https://api.tilus.com.br/apispec:query:14389:v0?type=json&token=CcpNjEGviHldR_2eB27h7hph1Qo', 
-    {
-      scrollYOffset: 50,
-      hideDownloadButton: true,
-      theme: { sidebar: { width: '260px' } } /* Afina um pouco o menu do Redoc */
-    }, 
-    document.getElementById('redoc-container')
-  );
+  // 1. Baixa o JSON original do Xano
+  fetch('https://api.tilus.com.br/apispec:query:14389:v0?type=json&token=CcpNjEGviHldR_2eB27h7hph1Qo')
+    .then(response => response.json())
+    .then(spec => {
+
+      // 2. Intercepta e corrige os nomes gigantes
+      for (const path in spec.paths) {
+        for (const method in spec.paths[path]) {
+          const endpoint = spec.paths[path][method];
+
+          if (endpoint.description) {
+            // Quebra o texto do Xano onde tiver um "Enter"
+            const linhas = endpoint.description.split('\n');
+
+            // O título do menu (summary) passa a ser só a primeira linha
+            endpoint.summary = linhas[0];
+
+            // O texto completo (incluindo as regras lógicas) vai para a descrição longa
+            // Se quiser que a primeira linha NÃO apareça no corpo, mude para: linhas.slice(1).join('\n')
+            endpoint.description = endpoint.description; 
+          } else if (endpoint.operationId) {
+            // Se a descrição do Xano estiver vazia, ele usa o Nome da Rota
+            endpoint.summary = endpoint.operationId;
+          }
+        }
+      }
+
+      // 3. Renderiza o Redoc com o JSON corrigido
+      Redoc.init(
+        spec, 
+        {
+          scrollYOffset: 50,
+          hideDownloadButton: true,
+          theme: { sidebar: { width: '280px' } }
+        }, 
+        document.getElementById('redoc-container')
+      );
+    });
 </script>
 
 
@@ -1212,8 +1236,13 @@
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
