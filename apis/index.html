@@ -75,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#documentacao-da-api" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -1114,8 +1109,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1163,8 +1156,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -1181,17 +1172,36 @@
 
 
 
-<h1 id="documentacao-da-api">Documentação da API</h1>
-<div id="redoc-container"></div>
+  <h1>APIs and Webhooks</h1>
 
+<hr />
+<p>hide:
+  - navigation
+  - toc</p>
+<hr />
+<style>
+  /* Força o conteúdo do MkDocs a usar a largura total da tela */
+  .md-grid {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /* Remove margens extras da área de conteúdo */
+  .md-content {
+    max-width: 100% !important;
+  }
+</style>
+
+<div id="redoc-container"></div>
 <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
 <script>
   Redoc.init(
-    'https://api.tilus.com.br/apispec:query:14389:v0?type=json&token=CcpNjEGviHldR_2eB27h7hph1Qo',
+    'https://api.tilus.com.br/apispec:query:14389:v0?type=json&token=CcpNjEGviHldR_2eB27h7hph1Qo', 
     {
       scrollYOffset: 50,
-      hideDownloadButton: true
-    },
+      hideDownloadButton: true,
+      theme: { sidebar: { width: '260px' } } /* Afina um pouco o menu do Redoc */
+    }, 
     document.getElementById('redoc-container')
   );
 </script>
