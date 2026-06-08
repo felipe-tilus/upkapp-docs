@@ -1223,29 +1223,36 @@
     .then(response => response.json())
     .then(spec => {
 
-      // 2. Intercepta e corrige os nomes gigantes
+      // NOVIDADE: 2. Cria a definição de segurança informando que usamos um Bearer Token
+      spec.components = spec.components || {};
+      spec.components.securitySchemes = {
+        TokenExterno: {
+          type: 'http',
+          scheme: 'bearer',
+          description: 'Token de autorização externo.'
+        }
+      };
+
+      // 3. Intercepta e corrige os dados de cada rota
       for (const path in spec.paths) {
         for (const method in spec.paths[path]) {
           const endpoint = spec.paths[path][method];
 
+          // NOVIDADE: 4. Força o endpoint a exigir o Token, removendo o "not required"
+          endpoint.security = [{ TokenExterno: [] }];
+
+          // Mantemos a correção dos nomes gigantes que já estava funcionando
           if (endpoint.description) {
-            // Quebra o texto do Xano onde tiver um "Enter"
             const linhas = endpoint.description.split('\n');
-
-            // O título do menu (summary) passa a ser só a primeira linha
             endpoint.summary = linhas[0];
-
-            // O texto completo (incluindo as regras lógicas) vai para a descrição longa
-            // Se quiser que a primeira linha NÃO apareça no corpo, mude para: linhas.slice(1).join('\n')
             endpoint.description = endpoint.description; 
           } else if (endpoint.operationId) {
-            // Se a descrição do Xano estiver vazia, ele usa o Nome da Rota
             endpoint.summary = endpoint.operationId;
           }
         }
       }
 
-      // 3. Renderiza o Redoc com o JSON corrigido
+      // 5. Renderiza o Redoc com o JSON corrigido
       Redoc.init(
         spec, 
         {
